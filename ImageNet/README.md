@@ -3,3 +3,5 @@
   
   
 ## Flow
+
+ ImageNet URL --> ddd => dd > dd >> dd >>> dd ->
