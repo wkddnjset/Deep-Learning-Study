@@ -9,9 +9,15 @@
 
 ## 정리
 
-### 모델
+### Word2Vec 활용 방법
 
-- 우선 우리가 무엇을 해야하는지에 대한 이해부터 시작해 봅시다. Word2vec은 여러분들이 다른 머신러닝에서 보았을 수도 있는 트릭을 사용합니다. 우리는 특정한 Task를 수행할 수 있는 하나의 은닉층을 가진 단순한 뉴럴넷을 학습시킬 것입니다. 
+- CBOW(Continuous Bag-Of-Words) model – 소스 컨텍스트에서 타겟 단어를 예측한다.
+    - 예를 들어, ‘the cat sits on the’라는 소스 컨텍스트로부터 ‘mat’이라는 타겟 단어를 예측한다. CBOW는 smaller 데이터셋에 적합하다.
+
+ 
+
+- Skip-Gram model – 타겟 단어로부터 소스 컨텍스트를 예측한다.
+    - 예를 들어, ‘mat’이라는 타겟 단어로부터 ‘the cat sits on the’라는 소스 컨텍스트를 예측한다. Skip-Gram model은 larger 데이터셋에 적합하다. 따라서, 앞으로 Ski-Gram model에 초점을 맞춰서 설명을 진행할 것이다.
 
 ## 참고
 
