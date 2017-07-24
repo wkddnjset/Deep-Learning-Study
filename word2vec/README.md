@@ -18,3 +18,5 @@
 [Word2Vec Tutorial](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) (Word2Vec에 대한 자세한 설명)
 
 [영화추천](http://yujuwon.tistory.com/entry/word2vec%EC%9C%BC%EB%A1%9C-%EC%98%81%ED%99%94-%EC%B6%94%EC%B2%9C-%ED%95%98%EA%B8%B0) (Word2Vec을 사용한 영화추천)
+
+[솔라리스 인공지능 연구실](http://solarisailab.com/archives/374) (텐서플로우를 이용한 자연어처리)
