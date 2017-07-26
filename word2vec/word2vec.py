@@ -260,14 +260,18 @@ nce_weights = tf.Variable(tf.random_uniform([voc_size, embedding_size], -1.0, 1.
 nce_biases = tf.Variable(tf.zeros([voc_size]))
 
 # nce_loss 함수를 직접 구현하려면 매우 복잡하지만,
-# nce_loss??????
+'''
+NCE Loss는 모델이 실제 단어에는 높은 확률을 부여하고 노이즈 단어들에는 낮은 확률을 부여하면 최대화된다. 
+기술적으로, 이런 방법을 Negative Sampling이라고 한다. 
+전체 어휘 V를 계산하는 것이 아니라 우리가 선택한 k개의 noise 단어들만 계산 - 매우 효율적
+'''
 # 함수를 텐서플로우가 제공하므로 그냥 tf.nn.nce_loss 함수를 사용하기만 하면 됩니다.
 loss = tf.reduce_mean(
             tf.nn.nce_loss(nce_weights, nce_biases, labels, selected_embed, num_sampled, voc_size))
 train_op = tf.train.AdamOptimizer(learning_rate).minimize(loss)
 
 
-'''
+
 #########
 # 신경망 모델 학습
 ######
@@ -290,7 +294,7 @@ with tf.Session() as sess:
     # with 구문 안에서는 sess.run 대신 간단히 eval() 함수를 사용할 수 있습니다.
     trained_embeddings = embeddings.eval()
 
-
+'''
 #########
 # 임베딩된 Word2Vec 결과 확인
 # 결과는 해당 단어들이 얼마나 다른 단어와 인접해 있는지를 보여줍니다.
